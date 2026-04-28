@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: GOOGLE
+    schema: GOOGLE
+    database: DB20_BRONZE_DB
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    tables:
+      - name: BUDGET
+        config: 
+          loaded_at_field: _fivetran_synced
+        columns:
+          - name: _row
+          - name: product_id
+          - name: quantity
+          - name: month
+          - name: _fivetran_synced

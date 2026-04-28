@@ -1,0 +1,91 @@
+version: 2
+
+sources:
+  - name: POSTGRES
+    schema: postgres
+    database: DB20_BRONZE_DB
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    tables:
+      - name: ADDRESSES
+        config:
+          loaded_at_field: _FIVETRAN_SYNCED
+        columns:
+          - name: ADDRESS_ID
+          - name: ZIPCODE
+          - name: COUNTRY
+          - name: ADDRESS
+          - name: STATE
+          - name: _FIVETRAN_DELETED          
+          - name: _FIVETRAN_SYNCED     
+
+      - name: ORDERITEMS
+        config:
+          loaded_at_field: _FIVETRAN_SYNCED
+        columns:
+          - name: ORDER_ID
+          - name: PRODUCT_ID
+          - name: QUANTITY
+          - name: _FIVETRAN_DELETED
+          - name: _FIVETRAN_SYNCED
+
+      - name: ORDERS
+        config:
+          loaded_at_field: _FIVETRAN_SYNCED
+        columns:
+          - name: ORDER_ID
+          - name: SHIPPING_SERVICE
+          - name: SHIPPING_COST
+          - name: ADDRESS_ID
+          - name: CREATED_AT
+          - name: PROMO_ID
+          - name: ESTIMATED_DELIVERY_AT
+          - name: ORDER_COST
+          - name: USER_ID
+          - name: ORDER_TOTAL
+          - name: DELIVERED_AT
+          - name: TRACKING_ID
+          - name: STATUS
+          - name: _FIVETRAN_DELETED
+          - name: _FIVETRAN_SYNCED
+
+      - name: PRODUCTS
+        config:
+          loaded_at_field: _FIVETRAN_SYNCED
+        columns:
+          - name: PRODUCT_ID
+          - name: PRICE
+          - name: NAME
+          - name: INVENTORY
+          - name: _FIVETRAN_DELETED
+          - name: _FIVETRAN_SYNCED
+
+      - name: PROMOS
+        config:
+          loaded_at_field: _FIVETRAN_SYNCED
+        columns:
+          - name: PROMO_ID
+          - name: DISCOUNT
+          - name: STATUS
+          - name: _FIVETRAN_DELETED
+          - name: _FIVETRAN_SYNCED
+
+      - name: USER
+        config:
+          loaded_at_field: _FIVETRAN_SYNCED
+        columns:
+          - name: USER_ID
+          - name: UPDATED_AT
+          - name: ADDRESS_ID
+          - name: LAST_NAME
+          - name: CREATED_AT
+          - name: PHONE_NUMBER
+          - name: TOTAL_ORDERS
+          - name: FIRST_NAME
+          - name: EMAIL
+          - name: _FIVETRAN_DELETED
+          - name: _FIVETRAN_SYNCED

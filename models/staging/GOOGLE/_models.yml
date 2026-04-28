@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: stg_GOOGLE__BUDGET
+    config:
+      materialized: view
+      database: DB20_SILVER_DB
+      schema: SILVER

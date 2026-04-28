@@ -2,32 +2,37 @@ version: 2
 
 models:
 
+  - name: stg_POSTGRES__ADDRESSES
+    config:
+      materialized: table
+      database: DB20_SILVER_DB
+      schema: POSTGRES
   - name: stg_POSTGRES__ORDERITEMS
     config:
-      materialized: view
+      materialized: table
       database: DB20_SILVER_DB
-      schema: SILVER
+      schema: POSTGRES
 
   - name: stg_POSTGRES__ORDERS
     config:
-      materialized: view
+      materialized: table
       database: DB20_SILVER_DB
-      schema: SILVER
+      schema: POSTGRES
 
   - name: stg_POSTGRES__PRODUCTS
     config:
-      materialized: view
+      materialized: table
       database: DB20_SILVER_DB
-      schema: SILVER
+      schema: POSTGRES
 
   - name: stg_POSTGRES__PROMOS
     config:
-      materialized: view
+      materialized: table
       database: DB20_SILVER_DB
-      schema: SILVER
+      schema: POSTGRES
 
   - name: stg_POSTGRES__USER
     config:
-      materialized: view
+      materialized: table
       database: DB20_SILVER_DB
-      schema: SILVER
+      schema: POSTGRES

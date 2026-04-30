@@ -1,9 +1,10 @@
+
 version: 2
 
 sources:
   - name: GOOGLE
-    schema: GOOGLE
     database: DB20_BRONZE_DB
+    schema: GOOGLE
 
     quoting:
       database: false
@@ -13,13 +14,17 @@ sources:
     tables:
       - name: BUDGET
         config: 
-          loaded_at_field: _fivetran_synced
+          loaded_at_field: _fivetran_synced        
         columns:
           - name: _row
           - name: product_id
           - name: quantity
           - name: month
           - name: _fivetran_synced
-  
 
-          
+      - name: USERS
+        columns:
+          - name: Nombre
+          - name: DNI
+          - name: email
+          - name: fecha_alta_sistema

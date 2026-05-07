@@ -48,7 +48,6 @@ final as (
         , a.state
         , a.country
 
-        -- 🔥 FIX CONTRACT: convertir a TIMESTAMP_TZ
         , convert_timezone('UTC', u.created_at_utc) as registered_at_utc
         , convert_timezone('UTC', u.updated_at_utc) as last_updated_at_utc
 
